@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Astuto Next</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <h2>🎃 AstutoNext</h2>
+        <a href="index.html" class="secondary-btn">← Back Home</a>
+    </header>
+
+    <main class="try-page">
+        <section class="try-header">
+            <h1 id="pageTitle">Try This Feature</h1>
+            <p id="pageDescription">
+                Explore ideas and help make products better.
+            </p>
+        </section>
+
+        <section class="try-panel">
+            <label for="companySelect">Choose a company</label>
+            <select id="companySelect">
+                <option value="">Loading companies...</option>
+            </select>
+        </section>
+
+        <section id="ideaSection" style="display:none">
+
+            <div class="try-panel">
+                <h2>Community Ideas</h2>
+                <div id="ideasList"></div>
+            </div>
+
+            <div class="try-panel" id="requestPanel">
+                <h2>Share your idea 💡</h2>
+
+                <form id="requestForm">
+                    <input
+                        type="text"
+                        id="requestTitle"
+                        placeholder="Give your idea a title"
+                        required
+                    >
+
+                    <textarea
+                        id="requestDescription"
+                        placeholder="Describe your idea..."
+                        required
+                    ></textarea>
+
+                    <button type="submit" class="primary-btn">
+                        Submit Idea
+                    </button>
+                </form>
+            </div>
+
+        </section>
+
+        <p id="message"></p>
+    </main>
+
+    <script src="feature.js"></script>
+</body>
+</html>

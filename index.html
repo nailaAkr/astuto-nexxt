@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Astuto Next | Public Feedback</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <a href="/" class="logo">Astuto<span>Next</span></a>
+    <button id="themeBtn" class="theme-btn">☾</button>
+  </header>
+
+  <main>
+
+    <!-- Home page -->
+    <section id="homePage">
+
+      <section class="hero">
+        <p class="eyebrow">YOUR VOICE MATTERS</p>
+        <h1>Make products <span>better.</span></h1>
+        <p>
+          Share the features you wish existed.
+          Find similar ideas and support requests from others.
+        </p>
+      </section>
+
+<!-- PRODUCT FEATURES -->
+<section class="features-section">
+    <div class="section-heading">
+        <div>
+            <h2>What we're building</h2>
+            <p>Explore the features of Astuto Next.</p>
+        </div>
+    </div>
+
+    <div class="features-grid">
+
+        <div class="feature-card" data-feature="companies">
+            <div class="feature-icon">🏢</div>
+            <h3>Company Feedback Boards</h3>
+            <p>Explore feedback boards for different companies.</p>
+            <span class="feature-status completed">✓ Completed</span>
+            
+        </div>
+
+        <div class="feature-card" data-feature="requests">
+            <div class="feature-icon">💡</div>
+            <h3>Feature Requests</h3>
+            <p>Share ideas and suggest new features.</p>
+            <span class="feature-status completed">✓ Completed</span>
+            <div class="feature-action">
+</div>
+        </div>
+
+       <div class="feature-card" data-feature="voting">
+        <div class="feature-icon">👍</div>
+            <h3>Community Voting</h3>
+            <p>Vote for ideas you want companies to build.</p>
+            <span class="feature-status completed">✓ Completed</span>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🤖</div>
+            <h3>AI Duplicate Finder</h3>
+            <p>Find similar requests before submitting a new one.</p>
+            <span class="feature-status progress">◉ In Progress</span>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>AI Feedback Analysis</h3>
+            <p>Discover common topics and patterns in feedback.</p>
+            <span class="feature-status pending">◷ Pending</span>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🔔</div>
+            <h3>Feedback Updates</h3>
+            <p>Get updates when requested features change status.</p>
+            <span class="feature-status pending">◷ Pending</span>
+        </div>
+</section>
+
+      <section class="companies-section">
+
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">EXPLORE</p>
+            <h2>Find a company</h2>
+          </div>
+
+          <button id="showCompanyForm" class="primary-btn">
+            + Add Company
+          </button>
+        </div>
+
+        <input
+          type="search"
+          id="companySearch"
+          placeholder="Search companies..."
+        >
+
+        <form id="companyForm" class="form-box" hidden>
+          <h3>Add a company</h3>
+
+          <label for="companyName">Company name</label>
+          <input id="companyName" required placeholder="e.g. Spotify">
+
+          <label for="companyUrl">Official website</label>
+          <input
+            id="companyUrl"
+            type="url"
+            required
+            placeholder="https://example.com"
+          >
+
+          <label for="companyDescription">Description</label>
+          <textarea
+            id="companyDescription"
+            required
+            placeholder="What does this company offer?"
+          ></textarea>
+
+          <button class="primary-btn" type="submit">
+            Add Company
+          </button>
+          <p id="companyMessage" class="message"></p>
+        </form>
+
+        <div id="companyList" class="company-grid">
+          Loading companies...
+        </div>
+
+      </section>
+    </section>
+
+    <!-- Company feedback page -->
+    <section id="companyBoard" hidden>
+
+      <button id="backBtn" class="back-btn">
+        ← Back to companies
+      </button>
+
+      <div class="company-header">
+        <p class="eyebrow">COMMUNITY FEEDBACK</p>
+        <h1 id="boardName"></h1>
+        <p id="boardDescription"></p>
+        <a id="boardWebsite" href="#" target="_blank"
+           rel="noopener noreferrer">Visit official website ↗</a>
+        <p class="disclaimer">
+          Community feedback board. Not an official company page.
+        </p>
+      </div>
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PUBLIC IDEAS</p>
+          <h2>Feature requests</h2>
+        </div>
+      </div>
+
+      <div id="ideaList" class="idea-list">
+        No requests yet.
+      </div>
+
+      <!-- New feature request -->
+      <section class="form-box idea-form-box">
+
+        <p class="eyebrow">HAVE AN IDEA?</p>
+        <h2>Suggest a feature</h2>
+
+        <form id="ideaForm">
+
+          <label for="ideaTitle">What feature do you want?</label>
+          <input
+            id="ideaTitle"
+            maxlength="120"
+            required
+            placeholder="e.g. Hide specific songs"
+          >
+
+          <label for="ideaDescription">Explain your idea</label>
+          <textarea
+            id="ideaDescription"
+            maxlength="2000"
+            required
+            placeholder="Explain what you want and why it would be useful..."
+          ></textarea>
+
+          <button id="checkIdeaBtn" class="ai-btn" type="button">
+            ✨ Check with AI
+          </button>
+
+        </form>
+
+        <!-- AI result -->
+        <div id="aiResult" class="ai-result" hidden>
+          <h3>AI Duplicate Finder</h3>
+
+          <p id="aiMessage"></p>
+
+          <p id="aiMethod" class="small-note"></p>
+
+          <div id="similarIdeas"></div>
+
+          <button id="submitIdeaBtn" class="primary-btn" hidden>
+            Submit as a new request
+          </button>
+        </div>
+
+      </section>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Astuto Next · Ideas deserve to be heard.</p>
+  </footer>
+
+  <script src="app.js"></script>
+
+  <!-- FEATURE DETAILS POPUP -->
+<div id="featureModal" class="feature-modal">
+    <div class="feature-modal-content">
+        <button id="closeFeatureModal" class="close-modal">&times;</button>
+
+        <div id="modalIcon" class="feature-icon">💡</div>
+        <h2 id="modalTitle">Feature Name</h2>
+        <p id="modalDescription"></p>
+
+        <span id="modalStatus" class="feature-status"></span>
+    </div>
+</div>
+
+</body>
+</html>
